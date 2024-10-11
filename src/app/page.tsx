@@ -2,7 +2,18 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div>
+      <div 
+        className="flex h-screen bg-cover bg-center justify-start items-start"
+        style={{ backgroundImage: 'url(/colorado-alpine.jpg)' }}
+      >
+      </div>
+      
+    </div>
+  );
+}
+
+/*     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Image
           className="dark:invert"
@@ -29,14 +40,7 @@ export default function Home() {
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
+          > 
             Deploy now
           </a>
           <a
@@ -96,6 +100,4 @@ export default function Home() {
           Go to nextjs.org →
         </a>
       </footer>
-    </div>
-  );
-}
+    </div> */
