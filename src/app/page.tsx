@@ -19,16 +19,16 @@ export default function Home() {
       <div 
         className="flex flex-col h-screen"
       >
-        <h1 className="text-2xl md:text-4xl m-10 md:m-22 ml-10 md:ml-20"> About </h1>
-        <div className="flex ">
+        <h1 className="text-2xl mt-5 ml-10 md:text-4xl md:m-22"> About </h1>
+        <div className="flex">
         <Image
             src="/K4.jpeg"
             alt="Kevin Harper Profile Picture"
             width={200}
             height={300}
-            className="w-96 m-10 object-cover rounded-lg" 
+            className=" m-10 hidden md:block object-cover rounded-lg" 
           />
-          <div className="flex flex-col mt-5">
+          <div className="flex flex-col m-10">
             <p>With 17 years of experience in the music industry, Kevin Harper is a seasoned recording engineer known for bringing a professional edge and creative flair to every project. Specializing in both studio recording and live sound, they have worked with a diverse range of artists, consistently delivering high-quality audio that meets the unique vision of each musician. Kevin's keen ear and technical expertise make him a trusted and sought-after engineer for artists of all genres.</p>
             <br/>
             <p> "Working with Kevin has been an absolute pleasure. They understood exactly what I wanted and helped bring my sound to life. He even stocks his house with coffee AND juice! Couldn’t have asked for a better engineer!" – Michael Sylvasie</p>
