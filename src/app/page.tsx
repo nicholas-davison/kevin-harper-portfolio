@@ -8,6 +8,11 @@ export default function Home() {
         style={{ backgroundImage: 'url(/colorado-alpine.jpg)' }}
       >
       </div>
+      <div 
+        className="flex h-screen bg-cover bg-center justify-start items-start"
+        style={{ backgroundImage: 'url(/colorado-alpine.jpg)' }}
+      >
+      </div>
       
     </div>
   );
