@@ -5,15 +5,38 @@ export default function Home() {
     <div>
       <div 
         className="flex h-screen bg-cover bg-center justify-start items-start"
-        style={{ backgroundImage: 'url(/colorado-alpine.jpg)' }}
+        style={{ 
+          backgroundImage: 'url(/K4.jpeg)',
+          backgroundPosition: 'center 20%' 
+        }}
       >
+        <ul className="text-white text-xl md:text-3xl mt-24 md:mt-32 ml-10 md:ml-20">
+          <li>Production</li>
+          <li>Tracking</li>
+          <li>Mixing</li>
+        </ul>
       </div>
       <div 
-        className="flex h-screen bg-cover bg-center justify-start items-start"
-        style={{ backgroundImage: 'url(/colorado-alpine.jpg)' }}
+        className="flex flex-col h-screen"
       >
+        <h1 className="text-2xl md:text-4xl m-10 md:m-22 ml-10 md:ml-20"> About </h1>
+        <div className="flex ">
+        <Image
+            src="/K4.jpeg"
+            alt="Kevin Harper Profile Picture"
+            width={200}
+            height={300}
+            className="w-96 m-10 object-cover rounded-lg" 
+          />
+          <div className="flex flex-col mt-5">
+            <p>With 17 years of experience in the music industry, Kevin Harper is a seasoned recording engineer known for bringing a professional edge and creative flair to every project. Specializing in both studio recording and live sound, they have worked with a diverse range of artists, consistently delivering high-quality audio that meets the unique vision of each musician. Kevin's keen ear and technical expertise make him a trusted and sought-after engineer for artists of all genres.</p>
+            <br/>
+            <p> "Working with Kevin has been an absolute pleasure. They understood exactly what I wanted and helped bring my sound to life. He even stocks his house with coffee AND juice! Couldn’t have asked for a better engineer!" – Michael Sylvasie</p>
+            <br/>
+            <p>"Kevin's attention to detail is second to none. Every session with him feels effortless, and the final result is always beyond expectations." – Paul Worley</p>
+          </div>
+        </div>
       </div>
-      
     </div>
   );
 }
