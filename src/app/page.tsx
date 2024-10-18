@@ -1,4 +1,6 @@
-import Image from "next/image";
+import Image from 'next/image';
+import Link from 'next/link';
+import AlbumArt from './components/albums-art';
 
 export default function Home() {
   return (
@@ -17,7 +19,8 @@ export default function Home() {
         </ul>
       </div>
       <div 
-        className="flex flex-col h-100"
+        id="about"
+        className="flex flex-col h-100 scroll-mt-24"
       >
         <h1 className="text-2xl mt-5 ml-10 md:text-4xl md:m-22"> About </h1>
         <div className="flex">
@@ -37,23 +40,42 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="h-auto bg-black flex items-center justify-center">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
-          <div className="bg-gray-800 w-60 h-60 rounded-md"></div>
-          <div className="bg-gray-800 w-60 h-60 rounded-md"></div>
-          <div className="bg-gray-800 w-60 h-60 rounded-md"></div>
-          <div className="bg-gray-800 w-60 h-60 rounded-md"></div>
-          
-          <div className="bg-gray-800 w-60 h-60 rounded-md"></div>
-          <div className="bg-gray-800 w-60 h-60 rounded-md"></div>
-          <div className="bg-gray-800 w-60 h-60 rounded-md"></div>
-          <div className="bg-gray-800 w-60 h-60 rounded-md"></div>
-          
-          <div className="bg-gray-800 w-60 h-60 rounded-md"></div>
-          <div className="bg-gray-800 w-60 h-60 rounded-md"></div>
-          <div className="bg-gray-800 w-60 h-60 rounded-md"></div>
-          <div className="bg-gray-800 w-60 h-60 rounded-md"></div>
-        </div>
+      <div className="h-auto bg-black flex flex-col items-center justify-center">
+          <AlbumArt/>
+          <Link href="/credits">
+            <button 
+              className="bg-green-400 hover:bg-green-500 hover:scale-105 transition-transform duration-300 py-3 px-6 mb-5 rounded-xl text-2xl"
+              >
+              Full List of Credits 
+              <i className="fa-solid fa-right-long pl-3 text-2xl"></i>
+            </button>
+          </Link>
+      </div>
+      <div 
+          className='h-auto p-16 bg-cover'       
+          style={{ 
+            backgroundImage: 'url(/lines.jpg)',
+            backgroundPosition: 'center 20%' 
+        }}>
+        <iframe 
+          style={{borderRadius:"12px"}}
+          src="https://open.spotify.com/embed/album/5n8ppNRmmYvkFGnQZPHdNc?utm_source=generator&theme=0" 
+          width="63%" 
+          height="352" 
+          allowFullScreen
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+          loading="lazy"
+          />
+          <br></br>
+        <iframe 
+          style={{borderRadius:"12px", marginLeft: 'auto'}}
+          src="https://open.spotify.com/embed/track/6F5uLZW5dDdBdRtk59Fodr?utm_source=generator&theme=0" 
+          width="63%" 
+          height="352" 
+          allowFullScreen
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+          loading="lazy"
+          />
       </div>
     </div>
   );
