@@ -38,7 +38,7 @@ export const NavBar = () => {
             {menuOpen && (
             <div className={`dropdown flex flex-col items-end p-4 mr-5 space-y-2 transition-colors duration-300 ${isScrolled ? 'bg-gray-800 text-white' : 'bg-transparent text-white'}`}>
                 <Link href="/" className="text-lg" onClick={() => setMenuOpen(false)}>Home</Link>
-                <Link href="/about" className="text-lg" onClick={() => setMenuOpen(false)}>About</Link>
+                <Link href="/credits" className="text-lg" onClick={() => setMenuOpen(false)}>Credits</Link>
                 <Link href="/contact" className="text-lg" onClick={() => setMenuOpen(false)}>Contact</Link>
             </div>
             )}
