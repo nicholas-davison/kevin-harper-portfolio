@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import AlbumArt from './components/albums-art';
+import AlbumArt from './components/albumArt';
 
 export default function Home() {
   return (
