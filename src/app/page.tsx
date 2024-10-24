@@ -1,23 +1,39 @@
+"use client"
 import Image from 'next/image';
 import Link from 'next/link';
 import AlbumArt from './components/albumArt';
+import { useEffect, useState } from 'react';
+import Parallax from './components/parallax';
 
 export default function Home() {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+      const handleScroll = () => {
+          setScrollY(window.scrollY);
+      };
+
+      window.addEventListener('scroll', handleScroll);
+
+      return () => {
+          window.removeEventListener('scroll', handleScroll);
+      };
+  }, []);
+
+  const parallaxStyle = {
+      backgroundImage: 'url(/K4.jpeg)',
+      backgroundPosition: `center ${20 + scrollY * 0.01}%`,
+  };
+
   return (
     <div>
-      <div 
-        className="flex h-screen bg-cover bg-center justify-start items-start"
-        style={{ 
-          backgroundImage: 'url(/K4.jpeg)',
-          backgroundPosition: 'center 20%' 
-        }}
-      >
-        <ul className="text-white text-xl md:text-4xl mt-28 md:mt-32 ml-10 md:ml-16">
-          <li>Production</li>
-          <li>Tracking</li>
-          <li>Mixing</li>
+      <Parallax imageUrl="/K4.jpeg" speed={0.01} cover={true}>
+        <ul className="text-white text-3xl md:text-6xl mt-[-20px] md:mt-[-50px] ml-6 md:ml-16 bg-black bg-opacity-50 p-4 rounded-lg">
+          <li className='mb-2'>Production</li>
+          <li className='my-2'>Tracking</li>
+          <li className='my-2'>Mixing</li>
         </ul>
-      </div>
+      </Parallax>
       <div 
         id="about"
         className="flex flex-col h-100 scroll-mt-24"
@@ -51,9 +67,10 @@ export default function Home() {
             </button>
           </Link>
       </div>
+      {/* <Parallax imageUrl="/lines.jpg" speed={0.01} cover={false}> */}
       <div 
-          className='h-auto p-16 bg-cover'       
-          style={{ 
+          className='h-auto p-16 bg-cover'    
+           style={{ 
             backgroundImage: 'url(/lines.jpg)',
             backgroundPosition: 'center 20%' 
         }}>
@@ -85,6 +102,7 @@ export default function Home() {
             loading="lazy"
             />
       </div>
+      {/* </Parallax> */}
     </div>
   );
 }

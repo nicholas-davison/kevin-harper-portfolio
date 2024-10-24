@@ -43,9 +43,9 @@ export const NavBar = () => {
 
     return (
         
-        <nav className={`fixed w-full transition-colors duration-300 ${isScrolled ? 'bg-gray-950 text-white' : 'bg-transparent text-white'}`}>
+        <nav className={`fixed w-full transition-colors duration-300 ${isScrolled || menuOpen ? 'bg-gray-950 text-white' : 'bg-transparent text-white'}`}>
             <div className="flex justify-between items-center p-4">
-                <Link href="/" className="text-4xl md:text-7xl md:pl-12 whitespace-nowrap">Kevin Harper</Link>
+                <Link href="/" className="text-wrap text-4xl md:text-7xl md:pl-12 whitespace-nowrap bg-black bg-opacity-50 p-4 rounded-lg">Kevin Harper</Link>
                 <div className="flex justify-between items-center p-4">
                     <div className='flex flex-col md:flex-row mr-8 md:mr-6 text-2xl md:text-4xl'>
                         <a href="https://www.instagram.com/yourusername" target="_blank" rel="noopener noreferrer">
@@ -65,9 +65,9 @@ export const NavBar = () => {
             </div>
             {menuOpen && (
             <div className={`dropdown flex flex-col items-end p-4 mr-5 space-y-2 transition-colors duration-300 ${isScrolled ? 'bg-gray-950 text-white' : 'bg-transparent text-white'}`}>
-                <Link href="/" className="text-2xl" onClick={() => setMenuOpen(false)}>Home</Link>
-                <Link href="/credits" className="text-2xl" onClick={() => setMenuOpen(false)}>Credits</Link>
-                <button className="text-2xl" onClick={() => {
+                <Link href="/" className="md:text-2xl" onClick={() => setMenuOpen(false)}>Home</Link>
+                <Link href="/credits" className="md:text-2xl" onClick={() => setMenuOpen(false)}>Credits</Link>
+                <button className="md:text-2xl" onClick={() => {
                     triggerShake()
                     
                     }}>
