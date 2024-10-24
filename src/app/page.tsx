@@ -12,7 +12,7 @@ export default function Home() {
           backgroundPosition: 'center 20%' 
         }}
       >
-        <ul className="text-white text-xl md:text-3xl mt-24 md:mt-32 ml-10 md:ml-20">
+        <ul className="text-white text-xl md:text-4xl mt-28 md:mt-32 ml-10 md:ml-16">
           <li>Production</li>
           <li>Tracking</li>
           <li>Mixing</li>
@@ -44,7 +44,7 @@ export default function Home() {
           <AlbumArt/>
           <Link href="/credits">
             <button 
-              className="bg-green-400 hover:bg-green-500 hover:scale-105 transition-transform duration-300 py-3 px-6 mb-5 rounded-xl text-2xl"
+              className="bg-orange-200 hover:bg-orange-300 hover:scale-105 transition-transform duration-300 py-3 px-6 mb-5 rounded-xl text-2xl"
               >
               Full List of Credits 
               <i className="fa-solid fa-right-long pl-3 text-2xl"></i>
