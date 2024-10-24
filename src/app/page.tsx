@@ -57,25 +57,33 @@ export default function Home() {
             backgroundImage: 'url(/lines.jpg)',
             backgroundPosition: 'center 20%' 
         }}>
-        <iframe 
-          style={{borderRadius:"12px"}}
-          src="https://open.spotify.com/embed/album/5n8ppNRmmYvkFGnQZPHdNc?utm_source=generator&theme=0" 
-          width="63%" 
-          height="352" 
-          allowFullScreen
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-          loading="lazy"
-          />
+          <iframe 
+            style={{borderRadius:"12px"}}
+            src="https://open.spotify.com/embed/track/6y9k1hTsiqA2zlpxhlGZrH?utm_source=generator&theme=0"
+            className="w-full md:w-2/3" 
+            height="352" 
+            allowFullScreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy"/>
           <br></br>
-        <iframe 
-          style={{borderRadius:"12px", marginLeft: 'auto'}}
-          src="https://open.spotify.com/embed/track/6F5uLZW5dDdBdRtk59Fodr?utm_source=generator&theme=0" 
-          width="63%" 
-          height="352" 
-          allowFullScreen
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-          loading="lazy"
-          />
+          <iframe 
+            style={{borderRadius:"12px" , marginLeft: 'auto'}} 
+            src="https://open.spotify.com/embed/track/5bJWTsIWfR3kz1LalWeGd2?utm_source=generator&theme=0" 
+            className="w-full md:w-2/3" 
+            height="352"
+            allowFullScreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy"/>
+          <br></br>
+          <iframe 
+            style={{borderRadius:"12px"}}
+            src="https://open.spotify.com/embed/track/6F5uLZW5dDdBdRtk59Fodr?utm_source=generator&theme=0" 
+            className="w-full md:w-2/3" 
+            height="352" 
+            allowFullScreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy"
+            />
       </div>
     </div>
   );
