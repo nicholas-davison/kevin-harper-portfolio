@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { NavBar } from "./components/navbar";
+import { Footer } from "./components/footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,7 +30,7 @@ export default function RootLayout({
       <head>
         <link
           rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         />
       </head>
       <body
@@ -37,6 +38,7 @@ export default function RootLayout({
       >
         <div><NavBar/></div>
         <div>{children}</div>
+        <div><Footer/></div>
       </body>
     </html>
   );

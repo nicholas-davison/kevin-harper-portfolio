@@ -6,6 +6,9 @@ import React, { useEffect, useState } from 'react';
 export const NavBar = () => {
     const [isScrolled, setIsScrolled] = useState(false)
     const [menuOpen, setMenuOpen] = useState(false)
+    const [shakeInstagram, setShakeInstagram] = useState(false);
+    const [shakeFacebook, setShakeFacebook] = useState(false);
+    const [shakeEmail, setShakeEmail] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -26,20 +29,50 @@ export const NavBar = () => {
         setMenuOpen(!menuOpen);
       };
 
+      const triggerShake = () => {
+        setShakeInstagram(true);
+        setTimeout(() => setShakeFacebook(true), 150);
+        setTimeout(() => setShakeEmail(true), 300);
+    
+        setTimeout(() => {
+          setShakeInstagram(false);
+          setShakeFacebook(false);
+          setShakeEmail(false);
+        }, 1000);
+      };
+
     return (
         
-        <nav className={`fixed w-full transition-colors duration-300 ${isScrolled ? 'bg-gray-800 text-white' : 'bg-transparent text-white'}`}>
+        <nav className={`fixed w-full transition-colors duration-300 ${isScrolled ? 'bg-gray-950 text-white' : 'bg-transparent text-white'}`}>
             <div className="flex justify-between items-center p-4">
-                <Link href="/" className="text-4xl md:text-7xl pl-5 whitespace-nowrap">Kevin Harper</Link>
-                <button className="text-3xl mr-5 focus:outline-none" onClick={toggleMenu}>
-                    <i className="fas fa-bars "></i>
-                </button>
+                <Link href="/" className="text-4xl md:text-7xl md:pl-12 whitespace-nowrap">Kevin Harper</Link>
+                <div className="flex justify-between items-center p-4">
+                    <div className='flex flex-col md:flex-row mr-8 md:mr-6 text-2xl md:text-4xl'>
+                        <a href="https://www.instagram.com/yourusername" target="_blank" rel="noopener noreferrer">
+                            <i className={`fa-brands fa-instagram md:mr-5  ${shakeInstagram ? 'shake' : ''}`}></i>
+                        </a>
+                        <a href="https://www.facebook.com/yourusername" target="_blank" rel="noopener noreferrer">
+                            <i className={`fa-brands fa-facebook md:mr-5 ${shakeFacebook ? 'shake' : ''}`}></i>
+                        </a>
+                        <a href="mailto:yourname@example.com">
+                            <i className={`fa-regular fa-envelope md:mr-20 ${shakeEmail ? 'shake' : ''}`}></i>
+                        </a>
+                        </div>
+                    <button className="text-2xl md:text-4xl md:mr-5 focus:outline-none" onClick={toggleMenu}>
+                        <i className="fas fa-bars "></i>
+                    </button>
+                </div>
             </div>
             {menuOpen && (
-            <div className={`dropdown flex flex-col items-end p-4 mr-5 space-y-2 transition-colors duration-300 ${isScrolled ? 'bg-gray-800 text-white' : 'bg-transparent text-white'}`}>
-                <Link href="/" className="text-lg" onClick={() => setMenuOpen(false)}>Home</Link>
-                <Link href="/credits" className="text-lg" onClick={() => setMenuOpen(false)}>Credits</Link>
-                <Link href="/contact" className="text-lg" onClick={() => setMenuOpen(false)}>Contact</Link>
+            <div className={`dropdown flex flex-col items-end p-4 mr-5 space-y-2 transition-colors duration-300 ${isScrolled ? 'bg-gray-950 text-white' : 'bg-transparent text-white'}`}>
+                <Link href="/" className="text-2xl" onClick={() => setMenuOpen(false)}>Home</Link>
+                <Link href="/credits" className="text-2xl" onClick={() => setMenuOpen(false)}>Credits</Link>
+                <button className="text-2xl" onClick={() => {
+                    triggerShake()
+                    
+                    }}>
+                    Contact
+                </button>
             </div>
             )}
       </nav>

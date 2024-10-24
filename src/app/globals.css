@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes shake {
+  0%, 100% { transform: translateY(0) scale(1); }
+  25% { transform: translateY(-5px) scale(1.2); }
+  50% { transform: translateY(5px) scale(1.3); }
+  75% { transform: translateY(-5px) scale(1.2); }
+}
+
+.shake {
+  animation: shake 0.5s ease;
+}
+
 html {
     scroll-behavior: smooth;
   }
