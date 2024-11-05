@@ -29,7 +29,7 @@ const Parallax: React.FC<ParallaxProps> = ({ children, imageUrl, speed, cover}) 
 
     return (
         <div
-            className={`flex ${cover ? "h-screen bg-cover bg-center justify-center items-center" : "h-auto p-16 bg-cover"} `}
+            className={` ${cover ? "flex h-screen bg-cover bg-center justify-center items-center" : "h-auto p-16 bg-cover"} `}
             style={parallaxStyle}
         >
             {children}

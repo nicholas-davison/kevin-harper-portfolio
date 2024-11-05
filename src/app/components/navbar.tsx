@@ -49,13 +49,13 @@ export const NavBar = () => {
                 <div className="flex justify-between items-center p-4">
                     <div className='flex flex-col md:flex-row mr-8 md:mr-6 text-2xl md:text-4xl'>
                         <a href="https://www.instagram.com/yourusername" target="_blank" rel="noopener noreferrer">
-                            <i className={`fa-brands fa-instagram md:mr-5  ${shakeInstagram ? 'shake' : ''}`}></i>
+                            <i className={`fa-brands fa-instagram md:mr-5 hover:scale-150 transition-transform duration-300 ${shakeInstagram ? 'shake' : ''}`}></i>
                         </a>
                         <a href="https://www.facebook.com/yourusername" target="_blank" rel="noopener noreferrer">
-                            <i className={`fa-brands fa-facebook md:mr-5 ${shakeFacebook ? 'shake' : ''}`}></i>
+                            <i className={`fa-brands fa-facebook md:mr-5 hover:scale-150 transition-transform duration-300 ${shakeFacebook ? 'shake' : ''}`}></i>
                         </a>
                         <a href="mailto:yourname@example.com">
-                            <i className={`fa-regular fa-envelope md:mr-20 ${shakeEmail ? 'shake' : ''}`}></i>
+                            <i className={`fa-regular fa-envelope md:mr-20 hover:scale-150 transition-transform duration-300 ${shakeEmail ? 'shake' : ''}`}></i>
                         </a>
                         </div>
                     <button className="text-2xl md:text-4xl md:mr-5 focus:outline-none" onClick={toggleMenu}>
