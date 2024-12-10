@@ -21,7 +21,7 @@ html {
     font-family: "Lexend Zetta", serif
   }
 
-  p, li {
+  p, li, td {
     font-family: "Urbanist", serif;
     font-optical-sizing: auto;
     font-weight: 400;

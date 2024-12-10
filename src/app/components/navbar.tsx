@@ -43,7 +43,7 @@ export const NavBar = () => {
 
     return (
         
-        <nav className={`fixed w-full transition-colors duration-300 ${isScrolled || menuOpen ? 'bg-gray-950 text-white' : 'bg-transparent text-white'}`}>
+        <nav className={`fixed w-full transition-colors duration-300 ${isScrolled || menuOpen ? 'bg-gray-950 text-white' : 'bg-transparent text-white'} z-50`}>
             <div className="flex justify-between items-center p-4">
                 <Link href="/" className="text-wrap text-4xl md:text-7xl md:pl-12 whitespace-nowrap bg-black bg-opacity-50 p-4 rounded-lg">Kevin Harper</Link>
                 <div className="flex justify-between items-center p-4">
