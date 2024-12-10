@@ -20,15 +20,11 @@ export default function Home() {
       };
   }, []);
 
-  const parallaxStyle = {
-      backgroundImage: 'url(/K4.jpeg)',
-      backgroundPosition: `center ${20 + scrollY * 0.01}%`,
-  };
 
   return (
     <div>
       {/* Cover Photo */}
-      <Parallax imageUrl="/K4.jpeg" speed={0.01} cover={true}>
+      <Parallax imageUrl="/KevinNew.jpeg" speed={0.05} cover={true}>
         <ul className="text-white text-3xl md:text-6xl mt-[-20px] md:mt-[-50px] ml-6 md:ml-16 bg-black bg-opacity-50 p-4 rounded-lg">
           <li className='mb-2'>Production</li>
           <li className='my-2'>Tracking</li>
@@ -53,9 +49,7 @@ export default function Home() {
           <div className="flex flex-col m-10">
             <p>With 17 years of experience in the music industry, Kevin Harper is a seasoned recording engineer known for bringing a professional edge and creative flair to every project. Specializing in both studio recording and live sound, they have worked with a diverse range of artists, consistently delivering high-quality audio that meets the unique vision of each musician. Kevin's keen ear and technical expertise make him a trusted and sought-after engineer for artists of all genres.</p>
             <br/>
-            <p>"Working with Kevin has been an absolute pleasure. They understood exactly what I wanted and helped bring my sound to life. He even stocks his house with coffee AND juice! Couldn’t have asked for a better engineer!" – Michael Sylvasie</p>
             <br/>
-            <p>"Kevin's attention to detail is second to none. Every session with him feels effortless, and the final result is always beyond expectations." – Paul Worley</p>
           </div>
         </div>
       </div>

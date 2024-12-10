@@ -15,7 +15,7 @@ export const Footer = () => {
           >
             <img
               src="/NDLogo.png"
-              className="h-8 mr-2"
+              className="h-8 mr-2 hover:scale-150 transition-transform duration-300"
               alt="Nicholas Davison Logo"
             /> 
             Nick Davison

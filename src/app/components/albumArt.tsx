@@ -6,6 +6,7 @@ import { getAlbums } from "../services/spotify";
 export default function AlbumArt() {
 
     const [albums, setAlbums] = useState<any[]>([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
       const fetchAlbums = async () => {
@@ -15,13 +16,25 @@ export default function AlbumArt() {
           "2vxiffHHOTPAbhRiAn44B8", "01PVvtU85NR2QJAlpwUKD5", "0tAqHptInfhc8HKYSTWEMp",
           "13LYdyvwNgwiiZH54nQbiE", "6L8iHimSAekApvL7gERFt5", "05G8lvi4ziqGao6fCfxMUO"
         ];
-  
+        setLoading(true);
         const albumData = await getAlbums(albumIds);
         if (albumData) setAlbums(albumData);
+        setLoading(false);
       };
   
       fetchAlbums();
     }, []);
+
+    if (loading) {
+      // Show a skeleton loader grid
+      return (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
+          {Array.from({ length: 12 }, (_, i) => (
+            <div key={i} className="w-70 h-70 bg-gray-300 animate-pulse" />
+          ))}
+        </div>
+      );
+    }
     
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
