@@ -17,3 +17,5 @@ export default function CreditsPage() {
       </div>
     );
   }
+
+  //https://api.developer.muso.ai/v4/profile/ca60ab1a-0c3a-4c10-bc52-a2206ef0127c/credits

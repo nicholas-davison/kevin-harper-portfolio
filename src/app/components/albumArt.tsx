@@ -11,10 +11,12 @@ export default function AlbumArt() {
     useEffect(() => {
       const fetchAlbums = async () => {
         const albumIds = [
-          "21PZ6vS8uahnrZmySYDh3K", "5n8ppNRmmYvkFGnQZPHdNc", "5GWW6Tsj1ojzdTfIWYtLmA",
+          "21PZ6vS8uahnrZmySYDh3K", "5n8ppNRmmYvkFGnQZPHdNc",
           "6TJMdIq1xmVFOFoWrBDAU1", "5XlYVBaXjtBJjUQafmNqC8", "13vdgL9Dnx1HPsAoblDmod",
           "2vxiffHHOTPAbhRiAn44B8", "01PVvtU85NR2QJAlpwUKD5", "0tAqHptInfhc8HKYSTWEMp",
-          "13LYdyvwNgwiiZH54nQbiE", "6L8iHimSAekApvL7gERFt5", "05G8lvi4ziqGao6fCfxMUO"
+          "2fs0PRgx5wEo3tZfpIyglT", "6L8iHimSAekApvL7gERFt5", "05G8lvi4ziqGao6fCfxMUO",
+          "2Ckq4YOi4Qqjm4GemELxjW"
+          
         ];
         setLoading(true);
         const albumData = await getAlbums(albumIds);
@@ -56,3 +58,4 @@ export default function AlbumArt() {
     };
 
 
+ /*    https://open.spotify.com/track/0qyWAhGuyqxs78EoknxAfe?si=0c6dac7ec71641d5 */

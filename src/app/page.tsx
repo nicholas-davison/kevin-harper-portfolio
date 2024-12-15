@@ -95,12 +95,22 @@ export default function Home() {
           <br></br>
           <iframe 
             style={{borderRadius:"12px"}}
-            src="https://open.spotify.com/embed/track/6F5uLZW5dDdBdRtk59Fodr?utm_source=generator&theme=0" 
+            src="https://open.spotify.com/embed/track/0qyWAhGuyqxs78EoknxAfe?utm_source=generator&theme=0" 
             className="w-full md:w-2/3" 
             height="352" 
             allowFullScreen
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
             loading="lazy"
+            />
+            <br></br>
+            <iframe 
+              style={{borderRadius:"12px" , marginLeft: 'auto'}} 
+              src="https://open.spotify.com/embed/track/55DCX1FPBbKSvQqMHrg7kf?utm_source=generator&theme=0" 
+              className="w-full md:w-2/3" 
+              height="352" 
+              allowFullScreen
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+              loading="lazy"
             />
       {/* </div> */}
       </Parallax>
