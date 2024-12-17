@@ -1,3 +1,5 @@
+"use client"
+import React from 'react'
 
 const creditsData = [
   { year: 2024, artist: 'Various Artists', album: 'Summer Party Country 2024', credit: 'Editing' },
@@ -65,8 +67,13 @@ const creditsData = [
   { year: 2001, artist: 'Jools Holland', album: 'Jools Holland\'s Big Band Rhythm & Blues', credit: 'Layout Concept' },
 ];
 
+
+
+
   
   const StaticSpreadsheet = () => {
+    
+
     return (
       <div className="px-5 overflow-x-auto">
         <table className="min-w-full border-collapse border border-gray-300">
@@ -95,7 +102,7 @@ const creditsData = [
   
   export default StaticSpreadsheet;
 
-
+//https://api.developer.muso.ai/v4/profile/ca60ab1a-0c3a-4c10-bc52-a2206ef0127c/credits
 
 
   

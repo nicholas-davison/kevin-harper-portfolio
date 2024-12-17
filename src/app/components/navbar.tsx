@@ -10,7 +10,7 @@ export const NavBar = () => {
     const [shakeFacebook, setShakeFacebook] = useState(false);
     const [shakeEmail, setShakeEmail] = useState(false);
 
-    useEffect(() => {
+/*     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 0) {
                 setIsScrolled(true)
@@ -23,7 +23,16 @@ export const NavBar = () => {
         return () => {
           window.removeEventListener('scroll', handleScroll);
         }
-    }, [])
+    }, []) */
+    
+    useEffect(() => {
+        const handleScroll = () => {
+          setIsScrolled(window.scrollY > 0);
+        };
+        window.addEventListener("scroll", handleScroll);
+    
+        return () => window.removeEventListener("scroll", handleScroll);
+      }, []);
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
