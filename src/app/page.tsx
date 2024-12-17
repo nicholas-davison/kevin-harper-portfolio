@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import AlbumArt from './components/albumArt';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Parallax from './components/parallax';
 
 export default function Home() {

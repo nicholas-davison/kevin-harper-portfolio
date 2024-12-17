@@ -1,18 +1,9 @@
 //src/app/services/spotify.ts
 
 
-let cachedToken: string | null = null;
-let tokenExpiry: number | null = null;
-
 export const getAccessToken = async (): Promise<string | null> => {
   try {
-    // Check if we have a cached token and if it's still valid
-    const now = Date.now();
-    if (cachedToken && tokenExpiry && now < tokenExpiry) {
-      return cachedToken;
-    }
-
-    // Fetch a new token if none is cached or if it has expired
+    // Fetch a new token
     const res = await fetch('/api/spotify-token');
     const data = await res.json();
 
@@ -21,11 +12,8 @@ export const getAccessToken = async (): Promise<string | null> => {
       return null;
     }
 
-    // Cache the new token and its expiry time
-    cachedToken = data.access_token;
-    tokenExpiry = now + data.expires_in * 1000; // expires_in is in seconds
-
-    return cachedToken;
+    // Return the fetched access token
+    return data.access_token;
   } catch (error) {
     console.error('Error fetching token:', error);
     return null;
