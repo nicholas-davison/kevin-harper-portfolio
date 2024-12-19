@@ -4,20 +4,38 @@ import React, { useEffect, useState } from "react";
 import { getAlbums, getAccessToken } from "../services/spotify";
 
 export default function AlbumArt() {
-  const [albums, setAlbums] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
+  type Album = {
+    id: string;
+    name: string;
+    external_urls: {
+      spotify: string;
+    };
+    images: {
+      url: string;
+      height: number;
+      width: number;
+    }[];
+    artists: {
+      name: string;
+    }[];
+    // Include other properties as necessary
+  };
+
+  const [albums, setAlbums] = useState<Album[]>([]);
+  /* const [loading, setLoading] = useState(true); */
   const [accessToken, setAccessToken] = useState<string | null>(null);
 
   // Fetch access token and set it in state
   useEffect(() => {
+    
     const fetchToken = async () => {
-      setLoading(true);
+      /* setLoading(true); */
       const token = await getAccessToken();
       if (token) {
         setAccessToken(token);
       } else {
         console.error("Failed to fetch access token");
-        setLoading(false);
+        /* setLoading(false); */
       }
     };
 
@@ -43,33 +61,22 @@ export default function AlbumArt() {
         "05G8lvi4ziqGao6fCfxMUO",
         "2Ckq4YOi4Qqjm4GemELxjW",
       ];
-      setLoading(true);
+      /* setLoading(true); */
 
       try {
-        const albumData = await getAlbums(albumIds);
+        const albumData = await getAlbums(albumIds, accessToken);
         if (albumData) {
           setAlbums(albumData);
         }
       } catch (error) {
         console.error("Error fetching albums:", error);
       } finally {
-        setLoading(false);
+        /* setLoading(false); */
       }
     };
 
     fetchAlbums();
   }, [accessToken]); // Dependency on accessToken
-
-    if (loading) {
-      // Show a skeleton loader grid
-      return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
-          {Array.from({ length: 12 }, (_, i) => (
-            <div key={i} className="w-70 h-70 bg-gray-300 animate-pulse" />
-          ))}
-        </div>
-      );
-    }
     
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">

@@ -2,11 +2,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import AlbumArt from './components/albumArt';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Parallax from './components/parallax';
 
 export default function Home() {
-  const [scrollY, setScrollY] = useState(0);
+/*   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
       const handleScroll = () => {
@@ -18,7 +18,7 @@ export default function Home() {
       return () => {
           window.removeEventListener('scroll', handleScroll);
       };
-  }, []);
+  }, []); */
 
 
   return (
@@ -47,7 +47,7 @@ export default function Home() {
             className=" m-10 hidden md:block object-cover rounded-lg" 
           />
           <div className="flex flex-col m-10">
-            <p>With 17 years of experience in the music industry, Kevin Harper is a seasoned recording engineer known for bringing a professional edge and creative flair to every project. Specializing in both studio recording and live sound, they have worked with a diverse range of artists, consistently delivering high-quality audio that meets the unique vision of each musician. Kevin's keen ear and technical expertise make him a trusted and sought-after engineer for artists of all genres.</p>
+            <p>With 17 years of experience in the music industry, Kevin Harper is a seasoned recording engineer known for bringing a professional edge and creative flair to every project. Specializing in both studio recording and live sound, they have worked with a diverse range of artists, consistently delivering high-quality audio that meets the unique vision of each musician. Kevin&#39;s keen ear and technical expertise make him a trusted and sought-after engineer for artists of all genres.</p>
             <br/>
             <br/>
           </div>
