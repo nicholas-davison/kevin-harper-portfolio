@@ -19,10 +19,27 @@ export const getAccessToken = async (): Promise<string | null> => {
     return null;
   }
 };
+
+type SpotifyAlbum = {
+  id: string;
+  name: string;
+  external_urls: {
+    spotify: string;
+  };
+  images: {
+    url: string;
+    height: number;
+    width: number;
+  }[];
+  artists: {
+    name: string;
+  }[];
+}
   
-  export const getAlbums = async (albumIds: string[]): Promise<any[] | null> => {
-    const accessToken = await getAccessToken();
+  export const getAlbums = async (albumIds: string[], accessToken: string): Promise<SpotifyAlbum[] | null> => {
+    /* const accessToken = await getAccessToken(); */
     
+
     if (!accessToken) {
       throw new Error('No access token');
     }
